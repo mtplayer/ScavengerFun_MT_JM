@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class TimerScript : MonoBehaviour
 {
@@ -11,14 +12,14 @@ public class TimerScript : MonoBehaviour
     public int numItems;
     public int currentTime;
     public static bool gameWon = false;
-    public Text timerText;
-    public Text winner;
+    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI winner;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        timerText.text = "Timer: " + maxTime.ToString();
+        timerText.text =  maxTime.ToString();
         currentTime = maxTime;
     }
 
@@ -28,7 +29,7 @@ public class TimerScript : MonoBehaviour
         if (timerActive)
         {
             currentTime = (int)Mathf.Ceil(maxTime - Time.timeSinceLevelLoad);
-            timerText.text = "Timer: " + currentTime.ToString();
+            timerText.text = currentTime.ToString();
         }
         else
         {

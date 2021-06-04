@@ -53,7 +53,7 @@ public class SceneChanger : MonoBehaviour
     }
 
     //Quit to desktop
-    public void quit()
+    public void Exit()
     {
         Application.Quit();
     }

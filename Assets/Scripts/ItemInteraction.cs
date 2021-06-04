@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ItemInteraction : MonoBehaviour
 {
 
     // Score tracking properties
     public static int itemsFound = 0;
-    private Text scoreText;
+    private TextMeshProUGUI scoreText;
 
     // Item dynamic properties
     public Rigidbody2D rb;
@@ -28,7 +29,7 @@ public class ItemInteraction : MonoBehaviour
     void Start ()
     {
         // reference score text
-        scoreText = GameObject.Find("Score").GetComponent<Text>();
+        scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
 
         // set start position to object position
         startPosition.x = rb.position.x;
@@ -59,7 +60,7 @@ public class ItemInteraction : MonoBehaviour
             startLerping();
             lerping = true;
             itemsFound = itemsFound + 1;
-            scoreText.text = "Found: " + itemsFound.ToString();
+            scoreText.text = itemsFound.ToString();
         }
         if (lerping)
         {
