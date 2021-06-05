@@ -22,10 +22,10 @@ public class PauseController : MonoBehaviour {
 
     public void wait ()
     {
-        endGame = GameObject.Find("EndGame").GetComponent<Text>();
-        endGame.text = "You Won!";
-        pausePanel.SetActive(true);
-        Time.timeScale = 0;
+        //endGame = GameObject.Find("EndGame").GetComponent<Text>();
+        //endGame.text = "You Won!";
+        //pausePanel.SetActive(true);
+        //Time.timeScale = 0;
     }
 
     void FixedUpdate()
