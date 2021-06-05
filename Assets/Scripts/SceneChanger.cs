@@ -6,8 +6,19 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
 
+    //public void LevelSwapper(int myIndex)
+    //{
+    //    myIndex = 0;
+
+    //    TimerScript.timerActive = true;
+    //    Time.timeScale = 1;
+    //    ItemInteraction.itemsFound = 0;
+    //    TimerScript.gameWon = false;
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    //}
+
     //Main to level 1
-    public void mainToLevelOne()
+    public void MainToLevelOne()
     {
         TimerScript.timerActive = true;
         Time.timeScale = 1;
@@ -17,7 +28,7 @@ public class SceneChanger : MonoBehaviour
     }
 
     //Main to level 2
-    public void mainToLevelTwo()
+    public void MainToLevelTwo()
     {
         TimerScript.timerActive = true;
         Time.timeScale = 1;
@@ -27,7 +38,7 @@ public class SceneChanger : MonoBehaviour
     }
 
     //Main to level 3
-    public void mainToLevelThree()
+    public void MainToLevelThree()
     {
         TimerScript.timerActive = true;
         Time.timeScale = 1;
@@ -37,7 +48,7 @@ public class SceneChanger : MonoBehaviour
     }
 
     //Main to level 4
-    public void mainToLevelFour()
+    public void MainToLevelFour()
     {
         TimerScript.timerActive = true;
         Time.timeScale = 1;
@@ -47,7 +58,7 @@ public class SceneChanger : MonoBehaviour
     }
 
     //Main to Freestyle
-    public void mainToFreestyle()
+    public void MainToFreestyle()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
     }

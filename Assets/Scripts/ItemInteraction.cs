@@ -69,15 +69,12 @@ public class ItemInteraction : MonoBehaviour
         }
     }
 
-
     // On mouse click on object
     void OnMouseDown()
     {         
 	    // this object was clicked - do something     
         found = true; 
     }   
-
-
 
     // Lerping functions
     private void startLerping()
