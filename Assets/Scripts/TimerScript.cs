@@ -35,9 +35,8 @@ public class TimerScript : MonoBehaviour
             }
         }
 
-       if (currentTime <= 0 && !canMoveTime)
-       {
-            canMoveTime = false;
+       if (currentTime <= 0)
+        {
             sceneChanger.LoadMainMenu();
         }
     }

@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
     private void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-        buttonHandler = GetComponent<ButtonHandler>();
+        //buttonHandler = GetComponent<ButtonHandler>();
     }
 
     private void Update()
@@ -21,6 +21,21 @@ public class Score : MonoBehaviour
 
     public void IncreaseScore()
     {
+        //if (buttonHandler.GetItemsFound())
+        //{
 
+        //}
+
+
+        /*
+        psudocode
+        
+        score = 0 at beginning of game
+
+        currentScore = timeLeft(whenItemIsClicked) + score
+        currentScore = levelScore
+
+
+        */
     }
 }
