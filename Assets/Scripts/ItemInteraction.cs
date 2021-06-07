@@ -86,9 +86,8 @@ public class ItemInteraction : MonoBehaviour
     {
         float timeSinceStarted = Time.time - timeStartedLerp;
         float percentageComplete = timeSinceStarted / lerpTime;
-
         var result = Vector2.Lerp(start, end, percentageComplete);
+
         return result;
     }
-
 }

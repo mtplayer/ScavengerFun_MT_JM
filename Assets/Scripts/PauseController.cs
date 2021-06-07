@@ -30,20 +30,20 @@ public class PauseController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        GameObject timer = GameObject.Find("Timer");
-        TimerScript timerScript = timer.GetComponent<TimerScript>();
+        //GameObject timer = GameObject.Find("Timer");
+        //TimerScript timerScript = timer.GetComponent<TimerScript>();
 
-        if (timerScript.currentTime <= 0 && !TimerScript.gameWon)
-        {
-            pausePanel.SetActive(true);          
-            endGame = GameObject.Find("EndGame").GetComponent<Text>();
-            endGame.text = "Try Again";
-            Time.timeScale = 0;
+        //if (timerScript.currentTime <= 0 && !TimerScript.gameWon)
+        //{
+        //    pausePanel.SetActive(true);          
+        //    endGame = GameObject.Find("EndGame").GetComponent<Text>();
+        //    endGame.text = "Try Again";
+        //    Time.timeScale = 0;
 
-        }else if (TimerScript.gameWon)
-        {
-            Invoke("wait", 0.5f);
-        }
+        //}else if (TimerScript.gameWon)
+        //{
+        //    Invoke("wait", 0.5f);
+        //}
     }
 
 

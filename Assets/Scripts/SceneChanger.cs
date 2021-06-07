@@ -1,175 +1,132 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    #region Main Menu Stuff
 
-    //public void LevelSwapper(int myIndex)
-    //{
-    //    myIndex = 0;
-
-    //    TimerScript.timerActive = true;
-    //    Time.timeScale = 1;
-    //    ItemInteraction.itemsFound = 0;
-    //    TimerScript.gameWon = false;
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-    //}
-
-    //Main to level 1
     public void MainToLevelOne()
     {
-        TimerScript.timerActive = true;
-        Time.timeScale = 1;
-        ItemInteraction.itemsFound = 0;
-        TimerScript.gameWon = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SetMainMenuValues();
+        SceneManager.LoadScene("Level 1");
     }
 
-    //Main to level 2
     public void MainToLevelTwo()
     {
-        TimerScript.timerActive = true;
-        Time.timeScale = 1;
-        ItemInteraction.itemsFound = 0;
-        TimerScript.gameWon = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SetMainMenuValues();
+        SceneManager.LoadScene("Level 2");
     }
 
-    //Main to level 3
     public void MainToLevelThree()
     {
-        TimerScript.timerActive = true;
-        Time.timeScale = 1;
-        ItemInteraction.itemsFound = 0;
-        TimerScript.gameWon = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SetMainMenuValues();
+        SceneManager.LoadScene("Level 3");
     }
 
-    //Main to level 4
     public void MainToLevelFour()
     {
-        TimerScript.timerActive = true;
-        Time.timeScale = 1;
-        TimerScript.gameWon = false;
-        ItemInteraction.itemsFound = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        SetMainMenuValues();
+        SceneManager.LoadScene("Level 4");
     }
 
-    //Main to Freestyle
     public void MainToFreestyle()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+        SceneManager.LoadScene("Freestyle Menu");
     }
 
-    //Quit to desktop
+    #endregion
+
+    #region Freestyle Stuff
+
+    public void FreestyleToLevelOne()
+    {
+        SetFreestyleMenuValues();
+        SceneManager.LoadScene("Level 1");
+    }
+
+    public void FreestyleToLevelTwo()
+    {
+        SetFreestyleMenuValues();
+        SceneManager.LoadScene("Level 2");
+    }
+
+    public void FreestyleToLevelThree()
+    {
+        SetFreestyleMenuValues();
+        SceneManager.LoadScene("Level 3");
+    }
+
+    public void FreestyleToLevelFour()
+    {
+        SetFreestyleMenuValues();
+        SceneManager.LoadScene("Level 4");
+    }
+
+    #endregion
+
     public void Exit()
     {
         Application.Quit();
+        //We need to add the URL quit button
     }
 
-    //--------------------------------------------
-    //Freestyle to Level 1
-    public void freestyleToLevelOne()
+    public void LoadMainMenu()
+    {
+        //TODO Switch Statment
+        if (SceneManager.GetActiveScene().buildIndex >= 1 || SceneManager.GetActiveScene().buildIndex <= 5)
+        {
+            SetMenu();
+            //if (SceneManager.GetActiveScene().buildIndex == 1)
+            //{
+            //    SetMenu();
+            //}
+            //else if (SceneManager.GetActiveScene().buildIndex == 3)
+            //{
+            //    SetMenu();
+            //}
+            //else if (SceneManager.GetActiveScene().buildIndex == 4)
+            //{
+            //    SetMenu();
+            //}
+            //else if (SceneManager.GetActiveScene().buildIndex == 5)
+            //{
+            //    SetMenu();
+            //}
+            //else if (SceneManager.GetActiveScene().buildIndex == 6)
+            //{
+            //    SceneManager.LoadScene("Main Menu");
+        }
+        else
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+    }
+
+    private static void SetMenu()
+    {
+        if (TimerScript.timerActive == true)
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
+        else
+        {
+            SceneManager.LoadScene("Freestyle Menu");
+        }
+    }
+
+    private void SetMainMenuValues()
+    {
+        TimerScript.timerActive = true;
+        Time.timeScale = 1;
+        //ItemInteraction.itemsFound = 0;
+        //TimerScript.gameWon = false;
+    }
+
+    private void SetFreestyleMenuValues()
     {
         TimerScript.timerActive = false;
         Time.timeScale = 1;
-        ItemInteraction.itemsFound = 0;
-        TimerScript.gameWon = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 5);
-    }
-
-    //Freestyle to Level 2
-    public void freestyleToLevelTwo()
-    {
-        TimerScript.timerActive = false;
-        Time.timeScale = 1;
-        ItemInteraction.itemsFound = 0;
-        TimerScript.gameWon = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
-    }
-
-    //Freestyle to Level 3
-    public void freestyleToLevelThree()
-    {
-        TimerScript.timerActive = false;
-        Time.timeScale = 1;
-        ItemInteraction.itemsFound = 0;
-        TimerScript.gameWon = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
-    }
-
-    //Freestyle to Level 4
-    public void freestyleToLevelFour()
-    {
-        TimerScript.timerActive = false;
-        Time.timeScale = 1;
-        ItemInteraction.itemsFound = 0;
-        TimerScript.gameWon = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-    }
-    //----------------------------------------------
-
-    //Load back to main menu
-    public void MainMenu()
-    {
-        if (SceneManager.GetActiveScene().buildIndex == 1)
-        {
-            if (TimerScript.timerActive == true)
-            {
-                //Main menu
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-            else
-            {
-                //Freestyle menu
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
-            }
-        }
-        else if (SceneManager.GetActiveScene().buildIndex == 3)
-        {
-            if (TimerScript.timerActive == true)
-            {
-                //Main menu
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-            }
-            else
-            {
-                //Freestyle menu
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
-            }
-        }
-        else if (SceneManager.GetActiveScene().buildIndex == 4)
-        {
-            if (TimerScript.timerActive == true)
-            {
-                //Main menu
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
-            }
-            else
-            {
-                //Freestyle menu
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-            }
-        }
-        else if (SceneManager.GetActiveScene().buildIndex == 5)
-        {
-            if (TimerScript.timerActive == true)
-            {
-                //Main menu
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
-            }
-            else
-            {
-                //Freestyle menu
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-        } 
-        else if (SceneManager.GetActiveScene().buildIndex == 6)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 4);
-        }
+        //ItemInteraction.itemsFound = 0;
+        //TimerScript.gameWon = false;
     }
 }
-  
