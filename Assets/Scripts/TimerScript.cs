@@ -3,19 +3,20 @@ using TMPro;
 
 public class TimerScript : MonoBehaviour
 {
-    public static bool timerActive = true;
-    public int maxTime;
-    public int numItems;
-    public int currentTime;
-    public static bool gameWon = false;
-    public TextMeshProUGUI timerText;
-
+    public static bool timerActive = true;//
     public bool canMoveTime = true;
 
-    public SceneChanger sceneChanger;
+    public int maxTime;
+    public int currentTime;
+
+    private TextMeshProUGUI timerText;
+    private SceneChanger sceneChanger;
 
     private void Start()
     {
+        sceneChanger = FindObjectOfType<SceneChanger>();
+        timerText = GetComponent<TextMeshProUGUI>();
+
         timerText.text =  maxTime.ToString();
         currentTime = maxTime;
     }
@@ -37,7 +38,7 @@ public class TimerScript : MonoBehaviour
 
        if (currentTime <= 0)
         {
-            sceneChanger.LoadMainMenu();
+            //sceneChanger.LoadMainMenu();
         }
     }
 }

@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Items : MonoBehaviour
+public class NoDestoryOnLoad : MonoBehaviour
 {
-    public List<GameObject> items;
-
     private void Start()
     {
-        
+        DontDestroyOnLoad(gameObject);
     }
 }

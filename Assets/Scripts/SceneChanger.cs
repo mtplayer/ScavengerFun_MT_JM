@@ -67,6 +67,7 @@ public class SceneChanger : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+        //TODO
         //We need to add the URL quit button
     }
 
@@ -76,25 +77,6 @@ public class SceneChanger : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex >= 1 || SceneManager.GetActiveScene().buildIndex <= 5)
         {
             SetMenu();
-            //if (SceneManager.GetActiveScene().buildIndex == 1)
-            //{
-            //    SetMenu();
-            //}
-            //else if (SceneManager.GetActiveScene().buildIndex == 3)
-            //{
-            //    SetMenu();
-            //}
-            //else if (SceneManager.GetActiveScene().buildIndex == 4)
-            //{
-            //    SetMenu();
-            //}
-            //else if (SceneManager.GetActiveScene().buildIndex == 5)
-            //{
-            //    SetMenu();
-            //}
-            //else if (SceneManager.GetActiveScene().buildIndex == 6)
-            //{
-            //    SceneManager.LoadScene("Main Menu");
         }
         else
         {
@@ -118,15 +100,11 @@ public class SceneChanger : MonoBehaviour
     {
         TimerScript.timerActive = true;
         Time.timeScale = 1;
-        //ItemInteraction.itemsFound = 0;
-        //TimerScript.gameWon = false;
     }
 
     private void SetFreestyleMenuValues()
     {
         TimerScript.timerActive = false;
         Time.timeScale = 1;
-        //ItemInteraction.itemsFound = 0;
-        //TimerScript.gameWon = false;
     }
 }
