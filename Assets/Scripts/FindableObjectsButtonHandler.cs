@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ButtonHandler : MonoBehaviour
+public class FindableObjectsButtonHandler : MonoBehaviour
 {
     public GameObject image;
     public GameObject button;

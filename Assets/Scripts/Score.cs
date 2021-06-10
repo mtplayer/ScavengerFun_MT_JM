@@ -5,30 +5,18 @@ public class Score : MonoBehaviour
 {
     public static Score instance;
 
-
     public int itemsFound = 0;
-
-
     public int score = 0;
-
-
-    //public int level1Items = 5;
-    //public int level2Items = 9;
-    //public int level3Items = 13;
-    //public int level4Items = 15;
-
-    //public bool isGreaterThan5;
-    //public bool isGreaterThan9;
-    //public bool isGreaterThan15; 
-    //private bool isGreaterThan20;
+    public int level;
 
     private TextMeshProUGUI scoreText;
     private SceneChanger sceneChanger;
+    private CanvasGroup canvasGroup;
 
-    private bool isAcceptableParam = true;
-    private bool isAcceptableParam2 = true;
-    private bool isAcceptableParam3 = true;
-    private bool isAcceptableParam4 = true;
+    //public bool isAcceptableParam1 = true;
+    //public bool isAcceptableParam2 = true;
+    //public bool isAcceptableParam3 = true;
+    //public bool isAcceptableParam4 = true;
 
     private void Start()
     {
@@ -45,73 +33,57 @@ public class Score : MonoBehaviour
 
         scoreText = GetComponent<TextMeshProUGUI>();
         sceneChanger = FindObjectOfType<SceneChanger>();
+        canvasGroup = GetComponentInParent<CanvasGroup>();
     }
 
-    //private void Update()
-    //{
-    //    scoreText.text = itemsFound.ToString();
+    public void SetUIHeaderOn()
+    {
+        canvasGroup.alpha = 1;
+    }
 
-    //    if (itemsFound > level1Items && !isGreaterThan5)
-    //    {
-    //        itemsFound = 0;
-    //        isGreaterThan5 = true;
-    //        sceneChanger.MainToLevelTwo();
-    //        Debug.Log("Reached 5");
-    //    }
-
-    //    if (itemsFound >7)
-    //    {
-    //        Debug.Log("Reached 10");
-    //        itemsFound = 0;
-    //        isGreaterThan9 = true;
-    //        sceneChanger.MainToLevelThree();
-    //    }
-    //    if (itemsFound > level3Items && isGreaterThan9)
-    //    {
-    //        itemsFound = 0;
-    //        isGreaterThan15 = true;
-    //        sceneChanger.MainToLevelFour();
-    //    }
-    //}
+    public void SetUIHeaderOff()
+    {
+        canvasGroup.alpha = 0;
+    }
+  
     private void Update()
     {
         scoreText.text = itemsFound.ToString();
 
-        if (itemsFound > 5 && isAcceptableParam == true)
+        if (itemsFound > 5 && level == 1)
         {
-            //itemsFound = 6;
-            //isGreaterThan5 = true;
             sceneChanger.MainToLevelTwo();
-            Debug.Log("Reached 6");
-            isAcceptableParam = false;
+            //sceneChanger.LevelChanger(6, "5 Level 2", 2);
+            LevelLogoLoader.instance.SetLevelTwoLogoImage();
+            Debug.Log("Collected 6");
+            level++;
         }
         
-        if (itemsFound > 15 && isAcceptableParam2 == true)
+        if (itemsFound > 15 && level == 2)
         {
-            //itemsFound = 
-            //isGreaterThan9 = true;
             sceneChanger.MainToLevelThree();
-            Debug.Log("Reached 6 + 10 = 16");
-            isAcceptableParam2 = false;
+            //sceneChanger.LevelChanger(16, "6 Level 3", 3);
+            LevelLogoLoader.instance.SetLevelThreeLogoImage();
+            Debug.Log("Collected 6 + 10 = 16");
+            level++;
         }
 
-        if (itemsFound > 29 && isAcceptableParam3 == true)
+        if (itemsFound > 29 && level == 3)
         {
-            //itemsFound = 0;
-            //isGreaterThan15 = true;
             sceneChanger.MainToLevelFour();
-            Debug.Log("Reached 6 + 10 + 14 = 30");
-            isAcceptableParam3 = false;
+            //sceneChanger.LevelChanger(30, "7 Level 4", 4);
+            LevelLogoLoader.instance.SetLevelFourLogoImage();
+            Debug.Log("Collected 6 + 10 + 14 = 30");
+            level++;
         }
 
-        if (itemsFound > 45 && isAcceptableParam4 == true)
+        if (itemsFound > 45 && level == 4 /*&& isAcceptableParam4 == true*/)
         {
-            //itemsFound = 0;
-            //isGreaterThan15 = true;
-            //sceneChanger.MainToLevelFour();
-            Debug.Log("Reached 6 + 10 + 14 + 16 = 46");
-            isAcceptableParam4 = false;
-            print("YOU WIN!!!");
+            Debug.Log("Collected 6 + 10 + 14 + 16 = 46");
+            //isAcceptableParam4 = false;
+
+            //TODO
+            print("YOU WIN!!!");//COOL SHIT
         }
     }
 }

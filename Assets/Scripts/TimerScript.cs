@@ -10,7 +10,7 @@ public class TimerScript : MonoBehaviour
     public int currentTime;
 
     private TextMeshProUGUI timerText;
-    private SceneChanger sceneChanger;
+    private SceneChanger sceneChanger;//
 
     private void Start()
     {
@@ -38,7 +38,8 @@ public class TimerScript : MonoBehaviour
 
        if (currentTime <= 0)
         {
-            //sceneChanger.LoadMainMenu();
+            SceneChanger.instance.LoadMainMenu();
+            currentTime = maxTime;
         }
     }
 }
