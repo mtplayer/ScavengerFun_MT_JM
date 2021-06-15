@@ -25,39 +25,41 @@ public class ButtonManager : MonoBehaviour, IPointerDownHandler
     {
         //Screen.fullScreen = !Screen.fullScreen;
         SceneChanger.instance.LoadMainMenu();
-        Score.instance.SetUIHeaderOff();
+        ScoreManager.instance.SetUIHeaderOff();
     }
 
     public void UseBackButton()
     {
         SceneChanger.instance.LoadMainMenu();
-        Score.instance.SetUIHeaderOff();
+        ScoreManager.instance.SetUIHeaderOff();
     }
+
+    //public void UseMain
 
     public void UseLevel1Button()
     {
         SceneChanger.instance.MainToLevelOne();
-        Score.instance.SetUIHeaderOn();
+        ScoreManager.instance.SetUIHeaderOn();
     }
 
     public void UseLevel2Button()
     {
         SceneChanger.instance.MainToLevelTwo();
-        Score.instance.SetUIHeaderOn();
+        ScoreManager.instance.SetUIHeaderOn();
         //button.interactable = false; 
     }
 
     public void UseLevel3Button()
     {
         SceneChanger.instance.MainToLevelThree();
-        Score.instance.SetUIHeaderOn();
+        ScoreManager.instance.SetUIHeaderOn();
         //button.interactable = false; 
     }
 
     public void UseLevel4Button()
     {
         SceneChanger.instance.MainToLevelFour();
-        Score.instance.SetUIHeaderOn();
+        ScoreManager.instance.SetUIHeaderOn();
         //button.interactable = false; 
     }
 }

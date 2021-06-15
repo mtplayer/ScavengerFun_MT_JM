@@ -5,11 +5,11 @@ public class FindableObjectsButtonHandler : MonoBehaviour
     public GameObject image;
     public GameObject button;
 
-    private Score score;
+    private ScoreManager score;
 
     private void Start()
     {
-        score = FindObjectOfType<Score>();
+        score = FindObjectOfType<ScoreManager>();
     }
 
     public void SetItemInventoryList()//USes the unity default buttn event system

@@ -5,6 +5,8 @@ public class SceneChanger : MonoBehaviour
 {
     public static SceneChanger instance;
 
+    public GameObject MainMenu;
+
     private void Start()
     {
         if (!instance)
@@ -34,48 +36,56 @@ public class SceneChanger : MonoBehaviour
     {
         LevelLogoLoader.instance.SetMainMenuLogoImage();
         SceneManager.LoadScene("3 Main Menu");
-        Score.instance.itemsFound = 0;
-        Score.instance.score = 0;/////////////////
-        Score.instance.level = 0;
+        ScoreManager.instance.itemsFound = 0;
+        ScoreManager.instance.level = 0;
         TimerManager.instance.CurrentTime = 0;
         TimerManager.instance.timerActive = false;
+        ScoreManager.instance.canvasGroup.alpha = 0;
+        ScoreManager.instance.canvasGroup.blocksRaycasts = false;
     }
 
     public void MainToLevelOne()
     {
         LevelLogoLoader.instance.SetLevelOneLogoImage();
         SceneManager.LoadScene("4 Level 1");        
-        Score.instance.itemsFound = 0;
-        Score.instance.level = 1;
-        TimerManager.instance.CurrentTime = 30;
+        ScoreManager.instance.itemsFound = 0;
+        ScoreManager.instance.level = 1;
+        TimerManager.instance.CurrentTime = 20;
         TimerManager.instance.timerActive = true;
+        ScoreManager.instance.canvasGroup.blocksRaycasts = true;
     }
 
     public void MainToLevelTwo()
     {
         LevelLogoLoader.instance.SetLevelTwoLogoImage();
         SceneManager.LoadScene("5 Level 2");
-        Score.instance.itemsFound = 0;
-        Score.instance.level = 2;
-        TimerManager.instance.CurrentTime = 40;
+        ScoreManager.instance.itemsFound = 0;
+        ScoreManager.instance.level = 2;
+        TimerManager.instance.CurrentTime = 25;
+        TimerManager.instance.timerActive = true;
+        ScoreManager.instance.canvasGroup.blocksRaycasts = true;
     }
 
     public void MainToLevelThree()
     {
         LevelLogoLoader.instance.SetLevelThreeLogoImage();
         SceneManager.LoadScene("6 Level 3");
-        Score.instance.itemsFound = 0;
-        Score.instance.level = 3;
-        TimerManager.instance.CurrentTime = 50;
+        ScoreManager.instance.itemsFound = 0;
+        ScoreManager.instance.level = 3;
+        TimerManager.instance.CurrentTime = 30;
+        TimerManager.instance.timerActive = true;
+        ScoreManager.instance.canvasGroup.blocksRaycasts = true;
     }
 
     public void MainToLevelFour()
     {
         LevelLogoLoader.instance.SetLevelFourLogoImage();
         SceneManager.LoadScene("7 Level 4");
-        Score.instance.itemsFound = 0;
-        Score.instance.level = 4;
-        TimerManager.instance.CurrentTime = 60;
+        ScoreManager.instance.itemsFound = 0;
+        ScoreManager.instance.level = 4;
+        TimerManager.instance.CurrentTime = 35;
+        TimerManager.instance.timerActive = true;
+        ScoreManager.instance.canvasGroup.blocksRaycasts = true;
     }
     #endregion
 
