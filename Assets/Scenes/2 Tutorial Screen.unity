@@ -717,6 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296cedc8c3a30d74498ce981aa621afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons: []
 --- !u!1 &396727012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1338,6 +1339,7 @@ GameObject:
   - component: {fileID: 863271355}
   - component: {fileID: 863271354}
   - component: {fileID: 863271353}
+  - component: {fileID: 863271356}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -1371,7 +1373,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863271351}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2073490a263a8b46994eb173981a346, type: 3}
   m_Name: 
@@ -1476,6 +1478,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863271351}
   m_CullTransparentMesh: 1
+--- !u!114 &863271356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863271351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b8dbff99df5f2439364b84b3e367f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTime: 30
 --- !u!1 &963773101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2703,6 +2718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296cedc8c3a30d74498ce981aa621afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons: []
 --- !u!1 &1727137115
 GameObject:
   m_ObjectHideFlags: 0
