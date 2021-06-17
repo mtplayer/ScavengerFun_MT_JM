@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+[System.Obsolete]
 public class ButtonManager : MonoBehaviour, IPointerDownHandler
 {
     private Button button;
@@ -18,6 +19,7 @@ public class ButtonManager : MonoBehaviour, IPointerDownHandler
 
     public void UseStartButton()
     {
+        Screen.fullScreen = !Screen.fullScreen;
         SceneChanger.instance.StartButtonToTutorial();
     }
 
@@ -33,6 +35,18 @@ public class ButtonManager : MonoBehaviour, IPointerDownHandler
         SceneChanger.instance.LoadMainMenu();
         ScoreManager.instance.SetUIHeaderOff();
     }
+
+    public void UseQuitButton()
+    {
+        Debug.Log("UseQuitButton");
+        Application.ExternalEval("window.location=\"http://www.flywithbutchohare.com\"");
+        Application.Quit();
+    }
+
+    //public void UseResetButton()
+    //{
+    //    SceneChanger.instance.LoadMainMenu();
+    //}
 
     //public void UseMain
 

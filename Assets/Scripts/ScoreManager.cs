@@ -65,6 +65,19 @@ public class ScoreManager : MonoBehaviour
     {
         scoreText.text = itemsFound.ToString();
 
+        //if (itemsFound == 0 && level == 0)
+        //{
+        //    button1.interactable = true;
+        //    image1.raycastTarget = true;
+        //    button2.interactable = false;
+        //    image2.raycastTarget = false;
+        //    button3.interactable = false;
+        //    image3.raycastTarget = false;
+        //    button4.interactable = false;
+        //    image4.raycastTarget = false;
+        //    score = 0;
+        //}
+
         if (itemsFound > 5 && level == 1)
         {
             button1.interactable = false;
